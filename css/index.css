@@ -1,0 +1,435 @@
+/* 防止元素高度塌陷 */
+.clearfix::before,
+.clearfix::after{
+    content:'';
+    display: table;
+    clear:both;
+}
+
+/* 去除所有a标签（超链接）的下划线 */
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+body{
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    color: #333;
+    /* 当小于该值的时候，body内容不再缩放。需要使用浏览器的滚动条才内查看完整。 */
+    min-width: 1226px;
+}
+
+/* 设置一个类，用来表示中间内容区域的宽度 */
+.main-width{
+    /* 设置宽度 */
+    width: 1226px;
+    /* 居中 */
+    margin: 0 auto;
+}
+
+/* 顶部导航条容器 */
+.topbar-wrapper{
+    width: 100%;
+    background-color: #333;
+    height: 40px;
+    line-height: 40px;
+}
+/* 让每个<li>都向左浮动，从而水平排列 */
+.topbar-wrapper li{
+    float: left;
+}
+/* 设置每个a标签按钮 */
+.topbar-wrapper a{
+    font-size:12px ;
+    color:#b0b0b0;
+    /* color: greenyellow; */
+    /* 把a标签变成块元素，从而可以设置作为按钮的高度和宽度 */
+    display: block;
+}
+/* 鼠标进入效果 */
+.topbar-wrapper a:hover{
+    color: white;
+}
+/* 分割线 */
+.topbar-wrapper .split-line{
+    color: gray;
+    font-size: 12px;
+    margin: 0 8px;
+}
+
+.service{
+    float: left;
+}
+/* 设置下载app的下拉 */
+.service .app .qr-code{
+    /* 可以通过none和block来显示和隐藏元素 */
+    /* display: none; */
+    width:124px;
+    /* 还可以通过设置高度来隐藏和显示元素 */
+    height: 0px;
+    overflow: hidden;
+    background-color: white;
+    line-height: 1px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* 开启绝对定位，不占用父元素布局的位置 */
+    position: absolute;
+    /* 左右平移，使其水平中心对齐 */
+    left: -38px;
+    /* 设置动画效果(当高度属性发生变化的时候，花费0.2秒) */
+    transition: height 0.2s;
+    /* 设置层级 */
+    z-index: 999;
+}
+
+/* 当鼠标移入时，显示二维码和白色三角形 */
+.app:hover .qr-code,
+.app:hover::after{
+    display: block;
+    height: 148px;
+}
+/* 开启相对定位 */
+.app{
+    position: relative;
+}
+/* 设置app下方的三角形，该三角是通过border生成的。 */
+.app::after{
+    content: '';
+    display: none;
+    width: 0;
+    height: 0;
+    /* 设置绝对定位 */
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    /* 设置四个方向的边框 */
+    border: 8px solid transparent;
+    /* 去除上边框 */
+    border-top: none;
+    /* 单独设置下边框 */
+    border-bottom-color: white;
+}
+
+/* 二维码图片 */
+.qr-code img{
+    width: 100px;
+    margin:16px 12px;
+}
+/* 二维码图片下方文字 */
+.qr-code span{
+    font-size: 14px;
+    color: black;
+}
+
+.user-service{
+    float:right;
+    margin: 0px 20px;
+}
+.shopping-cart{
+    float: right;
+}
+.shopping-cart a{
+    width: 120px;
+    text-align: center;
+    background-color: #424242;
+}
+.shopping-cart:hover a{
+    background-color: white;
+    color: #ff6700;
+}
+
+/* 设置中间的header */
+.header{
+    height: 100px;
+}
+.header .logo{
+    float: left;
+    margin-top: 22px;
+    width: 55px;
+    height: 55px;
+    position: relative;
+    /* 溢出的部分被裁剪掉，所以只显示一个logo */
+    overflow: hidden;
+}
+.header .logo a{
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    /* 路径是相对于当前文件的位置 */
+    background-image: url(../imgs/logo-footer.png);
+    background-position: center;
+    background-color: #ff6700;
+    left:0;
+    transition: left 0.2s;
+}
+.header .logo .home{
+    background-image: url(../imgs/mi-home.png);
+    left: -55px;
+}
+
+/* 鼠标移入，两个图片移动位置 */
+.header .logo:hover .mi{
+    left:55px;
+}
+.header .logo:hover .home{
+    left:0;
+}
+/* 设置中间的导航条 */
+.header .nav-wrapper{
+    float: left;
+    margin-left: 8px;
+}
+.header .nav-wrapper .nav{
+    /* width: 792px; */
+    height: 100px;
+    line-height: 100px;
+    padding-left: 58px;
+    /* background-color: gainsboro; */
+}
+.nav-wrapper li{
+    float: left;
+}
+.nav-wrapper li a{
+    display: block;
+    font-size: 16px;
+    margin-right: 20px;
+    /* margin-top: 20px;
+    margin-bottom: 20px; */
+}
+.nav-wrapper li a:hover{
+    color: #ff6700;
+}
+
+/* 隐藏全部商品标签 */
+.nav-wrapper li .all-products{
+    /* 隐藏，但是占据页面位置 */
+    visibility: hidden;
+}
+
+/* 下拉层，商品信息 */
+.nav .products-info{
+    /* 隐藏高度 */
+    height: 0px;
+    width: 100%;
+    overflow: hidden;
+    background-color:white;
+    position: absolute;
+    /* 相对于nav-wrapper定位 */
+    top:136px;
+    left:0;
+    transition: height 0.3s;
+    /* 设置层级 */
+    z-index: 990;
+}
+
+/* 当鼠标进入带有show-drop-down属性的li的时候，显示products-info元素 */
+/* 该选择器必须写在下拉层的下方，否则会被其覆盖 */
+.nav .show-drop-down:hover ~ .products-info,
+.products-info:hover{
+    height: 228px;
+    border-top: 1px solid rgb(224,224,224);
+    box-shadow: 0 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 设置搜索框的容器 */
+.search-wrapper{
+    width:296px;
+    height:50px;
+    /* background-color: red; */
+    float:right;
+    margin-top: 25px;
+    border: 1px solid rgb(224,224,224);
+}
+.search-wrapper .search-input{
+    /* 把搜索按钮和搜索文本框之间的间隙去掉 */
+    float: left;
+    /* 左右加上10个像素的内边距 */
+    padding: 0 10px;
+    border: none;
+    height: 50px;
+    width: 224px;
+    font-size: 16px;
+    /* outline:1px solid #ff6700; */
+}
+
+/* 设置input获取焦点后的样式 */
+.search-wrapper .search-input:focus,
+.search-wrapper .search-input:focus + button
+{
+    outline:1px solid #ff6700;
+}
+/* 搜索按钮 */
+.search-wrapper .search-btn{
+    /* 把搜索按钮和搜索文本框之间的间隙去掉 */
+    float: left;
+    height: 50px;
+    width: 52px;
+    padding: 0;
+    border: none;
+    background-color: white;
+    color: #616161;
+    font-size: 18px;
+    border-left: 1px solid rgb(224,224,224);
+}
+.search-wrapper .search-btn:hover{
+    background-color: #ff6700;
+    color: white;
+    border: 1px solid #ff6700;
+}
+
+.middle-board{
+    position: relative;
+}
+
+/* 中间区域左侧导航条 */
+.left-menu-board{
+    width: 234px;
+    height: 420px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 0;
+    z-index: 99;
+    position: absolute;
+}
+
+.left-menu a{
+    display: block;
+    height: 42px;
+    line-height: 42px;
+    color: white;
+    font-size: 14px;
+    padding: 0 30px;
+}
+.left-menu a:hover{
+    background-color: #ff6700;
+}
+.left-menu a i{
+    float: right;
+    line-height: 42px;
+}
+/* 中间区域轮播图 */
+.banner{
+    position: relative;
+    top:0;
+    /* 如果不设置高度，元素高度会塌陷 */
+    height: 460px;
+}
+.banner img{
+    width: 100%;
+}
+/* 把所有图片都叠加在一起 */
+.banner .img-list li{
+    position: absolute;
+}
+/* 小圆点 */
+.pointer{
+    position: absolute;
+    bottom: 24px;
+    right: 36px;
+}
+.pointer a{
+    float: left;
+    width: 8px;
+    height: 8px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.5);
+    margin-left: 6px;
+}
+.pointer a:hover,
+.pointer a.active{
+    border: 2px solid  rgba(0,0,0,0.5);
+    background-color:rgba(255,255,255,0.4);
+}
+
+/* 设置导航的箭头，使用雪碧图 */
+.navigation-arrow a{
+    width:41px;
+    height: 69px;
+    /* background-color: red; */
+    background-image: url(../imgs/icon-slides.png);
+    position: absolute;
+    /* 设置垂直居中 */
+    top:0;
+    bottom:0;
+    margin: auto 0;
+}
+
+.navigation-arrow .prev{
+    left:234px;
+    /* 背景雪碧图的偏移量 */
+    background-position: -84px 0;
+}
+.navigation-arrow .prev:hover{
+    background-position: 0px 0px;
+}
+.navigation-arrow .next{
+    right:0px;
+    background-position: -125px 0 ;
+}
+.navigation-arrow .next:hover{
+    background-position: -42px 0 ;
+}
+
+/* 边栏工具条 */
+.side-tools{
+    width: 26px;
+    height: 206px;
+    background-color: burlywood;
+    /* 开启固定定位 */
+    position: fixed;
+    bottom: 100px;
+    right: 50%;
+    margin-right: -639px;
+}
+
+/* 下部广告区域 */
+.ad{
+    height: 170px;
+    margin-top: 10px;
+}
+.ad .shortcut, .ad .ad-imgs, .ad li{
+    float: left;
+}
+
+/* 左侧快捷方式 */
+.ad .shortcut{
+    width: 234px;
+    height: 170px;
+    background-color: #5f5750;
+    margin-right: 14px;
+}
+.ad .shortcut a{
+    color: #CECCCA;
+    /* 超链接设置成块元素 */
+    display: block;
+    height: 84px;
+    width: 76px;
+    text-align: center;
+    font-size: 12px;
+    overflow: hidden;
+}
+/* 图标字体 */
+.ad .shortcut i{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 6px;
+    font-size: 20px;
+}
+.ad .shortcut a:hover{
+    color: white;
+}
+
+.ad .ad-imgs li{
+    width: 316px;
+    margin-right: 15px;
+}
+/* 最后一个元素没有外边距 */
+.ad .ad-imgs li:last-child{
+    margin-right: 0;
+}
+.ad .ad-imgs img{
+    width: 100%;
+    vertical-align: top;
+}

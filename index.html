@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米商城</title>
+    <!-- 引入重置样式表 -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <!-- 引入图标字体库 -->
+    <link rel="stylesheet" href="./css/fa/css/all.css">
+    <!-- 引入当前页面的样式 -->
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <!-- 顶部导航条 -->
+    <!-- 顶部导航条-外部容器 -->
+    <div class="topbar-wrapper">
+        <!-- 内部容器 -->
+        <!-- 防止高度塌陷，并设置宽度为主布局宽度 -->
+        <div class="topbar clearfix main-width">
+            <!-- 主服务选项 -->
+            <ul class="service">
+                <li><a href="javascript:;">小米商城</a></li>
+                <li class="split-line">|</li>
+                <li><a href="javascript:;">MIUI</a></li>
+                <li class="split-line">|</li>
+                <li><a href="javascript:;">LoT</a></li>
+                <li class="split-line">|</li>
+                <li><a href="javascript:;">云服务</a></li>
+                <li class="split-line">|</li>
+                <li><a href="javascript:;">天星数科</a></li>
+                <li class="split-line">|</li>
+                <li><a href="javascript:;">有品</a></li>
+                <li class="split-line">|</li>
+                <li><a href="javascript:;">小爱开放平台</a></li>
+                <li class="split-line">|</li>
+                <li><a href="javascript:;">企业团购</a></li>
+                <li class="split-line">|</li>
+                <li><a href="javascript:;">资质证照</a></li>
+                <li class="split-line">|</li>
+                <li><a href="javascript:;">协议规则</a></li>
+                <li class="split-line">|</li>
+                <li>
+                    <a class="app" href="javascript:;">
+                        下载App
+                        <!-- 添加弹出层 -->
+                        <div class="qr-code">
+                            <img src="./imgs/download.png">
+                            <span>小米商城App</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="split-line">|</li>
+                <li><a href="javascript:;">智能生活</a></li>
+                <li class="split-line">|</li>
+                <li><a href="javascript:;">Select Location</a></li>
+            </ul>
+            <!-- 购物车部分 -->
+            <ul class="shopping-cart">
+                <li>
+                    <a href="javascript:;">
+                        <!-- 购物车图标 -->
+                        <i class="fas fa-shopping-cart"></i>
+                        购物车（0）
+                    </a>
+                </li>
+            </ul>
+            <!-- 用户登陆部分 -->
+            <ul class="user-service">
+                <li><a href="javascript:;">登陆</a></li>
+                <li class="split-line">|</li>
+                <li><a href="javascript:;">注册</a></li>
+                <li class="split-line">|</li>
+                <li><a href="javascript:;">消息通知</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 创建一个头部的外部容器 -->
+    <div class="header-wrapper">
+        <div class="header main-width clearfix">
+            <!-- Logo，跳转到主页 -->
+            <h1 class="logo" title="小米">
+                <a href="/" class="home"></a>
+                <a href="/" class="mi"></a>
+            </h1>
+            <!-- 中间的导航条 -->
+            <div class="nav-wrapper">
+                <ul class="nav clearfix">
+                    <li>
+                        <a href="#" class="all-products">全部商品分类</a>
+                    </li>
+                    <li class="show-drop-down">
+                        <a href="#">小米手机</a>
+                    </li>
+                    <li class="show-drop-down">
+                        <a href="#">Redmi 红米</a>
+                    </li>
+                    <li class="show-drop-down">
+                        <a href="#">电视</a>
+                    </li>
+                    <li class="show-drop-down">
+                        <a href="#">笔记本</a>
+                    </li>
+                    <li class="show-drop-down">
+                        <a href="#">家电</a>
+                    </li>
+                    <li class="show-drop-down">
+                        <a href="#">路由器</a>
+                    </li>
+                    <li class="show-drop-down">
+                        <a href="#">智能硬件</a>
+                    </li>
+                    <li>
+                        <a href="#">服务</a>
+                    </li>
+                    <li>
+                        <a href="#">社区</a>
+                    </li>
+                    <!-- 弹出层 -->
+                    <div class="products-info"></div>
+                </ul>
+            </div>
+            <!-- 搜索框 -->
+            <div class="search-wrapper">
+                <form action="#" class="serach">
+                    <input type="text" class="search-input">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="middle-board main-width">
+        <!-- 左侧导航栏 -->
+        <div class="left-menu-board">
+            <ul class="left-menu">
+                <li>
+                    <a href="#">
+                        手机 电话卡
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        电视 盒子
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        笔记本 平板
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        家电 插线板
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        出行 穿戴
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        智能 路由器
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        电源 配件
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        健康 儿童
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        耳机 音箱
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        生活 箱包
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 轮播图 -->
+        <div class="banner">
+            <ul class="img-list">
+                <li>
+                    <a href="#">
+                        <img src="./imgs/01.webp" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./imgs/02.webp" alt="">
+                    </a>
+                </li>
+            </ul>
+            <!-- 导航的小圆点 -->
+            <div class="pointer">
+                <a href="javascript:;" class="active"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+            </div>
+            <!-- 导航的箭头 -->
+            <div class="navigation-arrow">
+                <a class="prev" href="javascript:;"></a>
+                <a class="next" href="javascript:;"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 边栏，工具栏 -->
+    <div class="side-tools"></div>
+
+    <!-- 底部广告窗口 -->
+    <div class="ad main-width">
+        <ul class="shortcut">
+            <li>
+                <a href="#"><i class="fas fa-clock"></i>小米秒杀</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-building"></i>企业团购</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-frog"></i>F码通道</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-laptop-code"></i>米粉卡</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-robot"></i>以旧换新</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-code"></i>话费充值</a>
+            </li>
+        </ul>
+        <!-- 三张图片 -->
+        <ul class="ad-imgs">
+            <li >
+                <a href="#">
+                    <img src="./imgs/ad-1.jpg" alt="">
+                </a>
+            </li>
+            <li >
+                <a href="#">
+                    <img src="./imgs/ad-2.jpg" alt="">
+                </a>
+            </li>
+            <li >
+                <a href="#">
+                    <img src="./imgs/ad-3.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>
